@@ -1,0 +1,55 @@
+.StudentMain {
+    height: calc(100vh - 55px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .whole {
+        width: -moz-fit-content;
+        width: fit-content;
+        border-radius: 15px;
+        padding: 3rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        .part {
+            display: flex;
+            margin: 1rem;
+            padding: 1rem;
+        }
+
+        .block {
+            align-items: center;
+            background: #f5f5fa;
+            margin: 2rem;
+            border: 0;
+            border-radius: 8px;
+            box-shadow: -10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17;
+            box-sizing: border-box;
+            color: #2a1f62;
+            cursor: pointer;
+            display: flex;
+            font-family: "Cascadia Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+            font-size: 1rem;
+            justify-content: center;
+            line-height: 1.5rem;
+            padding: 15px;
+            position: relative;
+            text-align: left;
+            transition: .2s;
+            -webkit-user-select: none;
+            user-select: none;
+            touch-action: manipulation;
+            white-space: pre;
+            width: max-content;
+            word-break: normal;
+            word-spacing: normal;
+
+            &:hover {
+                background: #f4f4ff;
+                box-shadow: -15px -15px 30px 0 #eef7f9, 15px 15px 30px 0 #1d0dca17;
+            }
+
+        }
+    }
+
+}
