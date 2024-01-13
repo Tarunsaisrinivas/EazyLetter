@@ -1,0 +1,60 @@
+.AdminMain {
+    display: flex;
+    width: 100%;
+
+    .ScrollLetters {
+        width: 500px;
+        min-height: calc(100vh - 55px);
+        border: 2px solid black;
+
+        ul {
+
+            display: flex;
+            flex-direction: column-reverse;
+
+            .list-item {
+                display: flex;
+                justify-content: space-between;
+                border: 1px solid gray;
+                padding: 20px;
+                position: relative;
+
+                span {
+                    width: 100px;
+                }
+
+                &:hover {
+                    background-color: #e4e4e4;
+                }
+
+                .time {
+                    position: absolute;
+                    top: 0%;
+                    right: 2px;
+                }
+
+                .color {
+                    background-color: rgb(10, 135, 45);
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid green;
+                    border-radius: 100%;
+                }
+            }
+
+            .list-item.selected {
+                background-color: #646464;
+            }
+        }
+    }
+
+    .Preview {
+        width: calc(100% - 500px);
+        height: calc(100vh - 55px);
+        border: 2px solid black;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        overflow: scroll;
+    }
+}

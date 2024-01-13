@@ -1,0 +1,1012 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+$primary-color: #4481eb;
+$secondary-color: #04befe;
+$text-color: #333;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+input {
+    font-family: "Poppins", sans-serif;
+}
+
+.Home {
+
+
+    .container {
+        position: relative;
+        width: 100%;
+        background-color: #fff;
+        min-height: calc(100vh - 55px);
+        overflow: hidden;
+
+
+        &:before {
+            content: "";
+            position: absolute;
+            height: 2000px;
+            width: 3000px;
+            top: 30%;
+            right: -25%;
+            transform: translateY(-50%);
+            background-image: linear-gradient(-45deg, $primary-color 0%, $secondary-color 100%);
+            transition: 1.8s ease-in-out;
+            border-radius: 50%;
+            z-index: 6;
+        }
+    }
+
+    .btn {
+        width: 150px;
+        background-color: #5995fd;
+        border: none;
+        outline: none;
+        height: 49px;
+        border-radius: 49px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .btn:hover {
+        background-color: #4d84e2;
+    }
+
+    .panels-container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .image {
+        width: 100%;
+        transition: transform 1.1s ease-in-out;
+        transition-delay: 0.4s;
+    }
+
+    .panel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+        text-align: center;
+        z-index: 6;
+    }
+
+    .left-panel {
+        padding: 3rem 17% 2rem 12%;
+
+    }
+
+    .right-panel {
+        padding: 3rem 12% 2rem 17%;
+
+    }
+
+    .container .right-panel .image,
+    .container .right-panel .content {
+        transform: translateX(450px);
+    }
+
+    .container .left-panel .image,
+    .container .left-panel .content {
+        transform: translateX(-450px);
+    }
+
+    .panel .content {
+        color: #fff;
+        transition: transform 1.2s ease-in-out;
+        transition-delay: 0.6s;
+    }
+
+    .center-panel {
+        .content {
+            gap: 10px;
+
+            .buttons {
+
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
+
+    .panel h3 {
+        font-weight: 600;
+        line-height: 1;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .panel p {
+        font-size: 0.95rem;
+        padding: 0.7rem 0;
+    }
+
+    .btn.transparent {
+        margin: 0;
+        background: none;
+        border: 2px solid #fff;
+        width: 130px;
+        height: 41px;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
+    form {
+        padding: 0rem 5rem;
+        transition: all 0.2s 0.7s;
+        overflow: hidden;
+    }
+
+    .title {
+        font-size: 2.2rem;
+        color: #444;
+        margin-bottom: 10px;
+    }
+
+    .input-field {
+        width: 300px;
+        background-color: #f0f0f0;
+        margin: 10px 0;
+        height: 55px;
+        border-radius: 55px;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        padding: 0 0.4rem;
+        position: relative;
+    }
+
+    .input-field .icon {
+        text-align: center;
+        margin-top: 10px;
+        color: #acacac;
+        transition: 0.5s;
+        font-size: 2rem;
+    }
+
+    .input-field input,
+    select {
+        background: none;
+        outline: none;
+        border: none;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #333;
+
+    }
+
+    .input-field input::placeholder {
+        color: #aaa;
+        font-weight: 500;
+
+    }
+
+    select {
+
+        color: #333333dc;
+        font-weight: 1.1rem;
+
+        option {
+            font-size: 1.1rem;
+            color: #333;
+        }
+    }
+
+
+    .signform-container {
+        display: none;
+    }
+
+    .container.admin-mode .center-panel,
+    .container.student-mode .center-panel,
+    .container.student-signup .center-panel {
+        opacity: 0;
+        -webkit-transition: opacity 600ms, visibility 600ms;
+        transition: opacity 600ms, visibility 600ms;
+        z-index: 1;
+    }
+
+    .container.admin-mode:before {
+        transform: translate(100%, -50%);
+        top: -10%;
+        right: 52%;
+    }
+
+    .container.admin-mode .left-panel .image,
+    .container.admin-mode .left-panel .content {
+        transform: translateX(-500px);
+    }
+
+    .container.admin-mode .right-panel .image,
+    .container.admin-mode .right-panel .content {
+        transform: translateX(-250px);
+    }
+
+
+    .container.admin-mode .center-panel .content {
+        transform: translateY(500px);
+    }
+
+
+    .container.student-mode:before {
+        transform: translateY(-50%);
+        top: -10%;
+        right: 48%;
+    }
+
+    .container.student-mode .left-panel .image,
+    .container.student-mode .left-panel .content {
+        transform: translateX(250px);
+    }
+
+    .container.student-mode .right-panel .image,
+    .container.student-mode .right-panel .content {
+        transform: translateX(500px);
+    }
+
+    .container.student-mode .center-panel .content {
+        transform: translateY(500px);
+    }
+
+    .container.student-signup:before {
+        transform: translate(-20%, -95%);
+    }
+
+    .container.student-signup .left-panel .image {
+        transform: translateX(-500px);
+    }
+
+    .container.student-signup .left-panel .content {
+        transform: translate(-10px, -90px);
+        transition: transform 1.5s ease-in-out;
+    }
+
+    .container.student-mode {
+        .signform-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .signin {
+            animation: SSignIn 2.5s;
+            transform: translate(50%, 50%);
+            z-index: 7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            padding: 0rem 5rem;
+            transition: all 0.2s 0.7s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        p a {
+            color: #04befe;
+            cursor: pointer;
+        }
+
+    }
+
+    .container.admin-mode {
+        .signform-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .signin {
+            animation: ASignIn 2.5s;
+            transform: translate(-75%, 50%);
+            z-index: 7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            padding: 0rem 5rem;
+            transition: all 0.2s 0.7s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+    }
+
+    @keyframes SSignup {
+        0% {
+            opacity: 0;
+            transform: translate(-100%, 20%);
+            z-index: 1;
+        }
+
+        90% {
+            z-index: 1;
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(25%, 20%);
+            z-index: 7;
+        }
+    }
+
+    @keyframes SSignIn {
+        0% {
+            opacity: 0;
+            transform: translate(200%, 50%);
+            z-index: 1;
+        }
+
+        95% {
+            z-index: 1;
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(50%, 50%);
+            z-index: 7;
+
+        }
+    }
+
+    // @keyframes ASignup {
+    //     0% {
+    //         opacity: 0;
+    //         transform: translate(100%, 30%);
+    //         z-index: 1;
+    //     }
+
+    //     90% {
+    //         z-index: 1;
+    //     }
+
+    //     100% {
+    //         opacity: 1;
+    //         transform: translate(-10%, 30%);
+    //         z-index: 7;
+    //     }
+    // }
+
+    @keyframes ASignIn {
+        0% {
+            opacity: 0;
+            transform: translate(-200%, 50%);
+            z-index: 1;
+        }
+
+        95% {
+            z-index: 1;
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(-75%, 50%);
+            z-index: 7;
+
+        }
+    }
+
+    .container.student-signup {
+        .signform-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .signup {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: SSignup 2.5s;
+            transition: 1s 0.7s ease-in-out;
+            align-items: center;
+            transform: translate(25%, 20%);
+            z-index: 7;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0rem 5rem;
+            transition: all 0.2s 0.7s;
+            overflow: hidden;
+        }
+
+        p a {
+            color: #04befe;
+            cursor: pointer;
+        }
+
+        .row {
+            display: flex;
+            padding: 0 20px;
+        }
+    }
+
+    @media (max-width: 670px) {
+
+        @keyframes Ssignup {
+            0% {
+                opacity: 0;
+                transform: translate(0%, 100%);
+                z-index: 1;
+            }
+
+
+            100% {
+                opacity: 1;
+                transform: translate(0%, 50%);
+                z-index: 7;
+            }
+        }
+
+        @keyframes Ssignin {
+            0% {
+                opacity: 0;
+                transform: translate(0%, -100%);
+                z-index: 1;
+            }
+
+            95% {
+                z-index: 1;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate(0%, 50%);
+                z-index: 7;
+
+            }
+        }
+
+        // @keyframes Asignup {
+        //     0% {
+        //         opacity: 0;
+        //         transform: translate(0%, 100%);
+        //         z-index: 1;
+        //     }
+
+        //     90% {
+        //         z-index: 1;
+        //     }
+
+        //     100% {
+        //         opacity: 1;
+        //         transform: translate(0%, 45%);
+        //         z-index: 5;
+        //     }
+        // }
+
+        @keyframes Asignin {
+            0% {
+                opacity: 0;
+                transform: translate(0%, -100%);
+                z-index: 1;
+            }
+
+            95% {
+                z-index: 1;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate(0%, 40%);
+                z-index: 7;
+
+            }
+        }
+
+        .container {
+            min-height: 500px;
+            height: 94vh;
+        }
+
+        .title {
+            font-size: 2rem;
+        }
+
+        .signin {
+            width: 100%;
+            top: 95%;
+            transform: translate(-50%, -100%);
+            transition: 1s 0.8s ease-in-out;
+        }
+
+        .signin,
+        .container.admin-mode .signin {
+            left: 50%;
+        }
+
+        .panels-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+        }
+
+        .panel {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 2.5rem 8%;
+        }
+
+        .right-panel {
+            display: none;
+        }
+
+        .left-panel {
+            display: none;
+        }
+
+        .center-panel {
+            min-height: 500px;
+            height: 100vh;
+            background-color: #04befe;
+
+
+        }
+
+        .image {
+            width: 200px;
+            transition: transform 0.9s ease-in-out;
+            transition-delay: 0.6s;
+        }
+
+        .panel .content {
+            padding-right: 15%;
+            transition: transform 0.9s ease-in-out;
+            transition-delay: 0.8s;
+        }
+
+        .panel h3 {
+            font-size: 1.2rem;
+        }
+
+        .panel p {
+            font-size: 0.7rem;
+            padding: 0.5rem 0;
+        }
+
+        .btn.transparent {
+            width: 110px;
+            height: 35px;
+            font-size: 0.7rem;
+        }
+
+        .container:before {
+            width: 1500px;
+            height: 1500px;
+            transform: translateX(-50%);
+            left: 30%;
+            bottom: 68%;
+            right: initial;
+            top: initial;
+            transition: 2s ease-in-out;
+        }
+
+        .container .center-panel .content {
+            transform: translateX(10%);
+        }
+
+        .container.admin-mode:before {
+            transform: translate(-50%, 40%);
+            bottom: 32%;
+            right: initial;
+        }
+
+        .container.admin-mode .left-panel,
+        .container.admin-mode .right-panel,
+        .container.student-mode .left-panel,
+        .container.student-mode .right-panel {
+            display: flex;
+        }
+
+        .container.student-mode .left-panel {
+            transform: translateY(200%);
+        }
+
+
+
+        .container.admin-mode .center-panel {
+            height: 20px;
+        }
+
+        .container.admin-mode .left-panel .image,
+        .container.admin-mode .left-panel .content {
+            display: none;
+        }
+
+        .container.admin-mode .right-panel .image {
+            animation: Tasignini 2.5s;
+            transform: translate(-40%, -100%);
+        }
+
+        @keyframes Tasignini {
+            0% {
+                transform: translate(-40%, -150%);
+            }
+
+            100% {
+                transform: translate(-40%, -100%);
+            }
+
+        }
+
+        @keyframes Tasigninc {
+            0% {
+                transform: translate(20%, -250%);
+            }
+
+            100% {
+                transform: translate(20%, -50%);
+            }
+        }
+
+        .container.admin-mode .right-panel .content {
+            animation: Tasigninc 2.5s;
+            transform: translate(20%, -50%);
+            display: flex;
+            flex-direction: column;
+
+            .btn-container {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+        }
+
+        // .container.admin-signup {
+        //     min-height: 500px;
+        //     height: 110vh;
+        // }
+
+        .container.student-signup {
+            min-height: 500px;
+            height: 110vh;
+        }
+
+        .container.admin-mode .signin {
+            animation: Asignin 2.5s;
+            transform: translate(0%, 40%);
+        }
+
+        // .container.admin-signup .signup {
+        //     animation: Asignup 2.5s;
+        //     top: 5%;
+        //     transform: translate(0%, 45%);
+        // }
+
+        // .admin-sign-up-form {
+        //     display: flex;
+        //     flex-direction: column;
+        // }
+
+        // .container.admin-signup .right-panel {
+        //     display: flex;
+        // }
+
+        // .container.admin-signup .right-panel .image {
+        //     animation: Tasignupi 2.5s;
+        //     transform: translate(-40%, -480%);
+        // }
+
+        // @keyframes Tasignupi {
+        //     0% {
+        //         transform: translate(-40%, -380%);
+        //     }
+
+        //     100% {
+        //         transform: translate(-40%, -480%);
+        //     }
+        // }
+
+        // @keyframes Tasignupc {
+        //     0% {
+        //         transform: translate(30%, -950%);
+        //     }
+
+        //     100% {
+        //         transform: translate(30%, -1150%);
+        //     }
+        // }
+
+        // .container.admin-signup .right-panel .content {
+        //     animation: Tasignupc 2.5s;
+        //     transform: translate(30%, -1150%);
+        //     display: flex;
+        //     flex-direction: column;
+        //     z-index: 6;
+
+        //     .btn-container {
+        //         display: flex;
+        //         flex-direction: row;
+        //         gap: 10px;
+        //         margin-top: 10px;
+        //     }
+        // }
+
+
+        // .container.admin-signup:before {
+        //     transform: translate(-40%, -105%);
+        //     top: 32%;
+        //     right: initial;
+        // }
+
+
+        .container.student-mode:before {
+            transform: translate(-50%, 40%);
+            bottom: 32%;
+            right: initial;
+        }
+
+        .container.student-mode .left-panel .image {
+            animation: Tssignini 2s;
+            transform: translate(-30%, 20%);
+        }
+
+        @keyframes Tssignini {
+            0% {
+                transform: translate(-30%, -150%);
+            }
+
+            100% {
+                transform: translate(-30%, 20%);
+            }
+        }
+
+        .container.student-mode .left-panel .content {
+            transform: translate(20%, 160%);
+            transition: transform 1.2s ease-out;
+            display: flex;
+            flex-direction: column;
+            z-index: 6;
+
+            .btn-container {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                margin-top: 10px;
+            }
+        }
+
+        .container.student-mode .right-panel .image,
+        .container.student-mode .right-panel .content {
+            display: none;
+        }
+
+        .container.student-mode .signin {
+            animation: Ssignin 2.5s;
+            transform: translate(0%, 50%);
+            z-index: 5;
+
+            .title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .container.student-signup {
+            .student-sign-up-form {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .container.student-signup .left-panel {
+            display: flex;
+        }
+
+        @keyframes Tssignupi {
+            0% {
+                transform: translate(-30%, 170%);
+            }
+
+            100% {
+                transform: translate(-30%, 70%);
+            }
+
+        }
+
+        .container.student-signup .left-panel .image {
+            display: flex;
+            animation: Tssignupi 2.5s;
+            transform: translate(-30%, 70%);
+        }
+
+        .container.student-signup .left-panel .content {
+            transform: translate(20%, -20%);
+            display: flex;
+            flex-direction: column;
+            z-index: 6;
+
+            .btn-container {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                margin-top: 10px;
+            }
+        }
+
+        .container.student-signup:before {
+            transform: translate(-40%, -105%);
+            top: 32%;
+            right: initial;
+        }
+
+        .container.student-signup .signup {
+            animation: Ssignup 2.5s;
+            top: 5%;
+            transform: translate(0%, 50%);
+        }
+    }
+}
+
+.admin-sign {
+    .signform-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .signup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .admin-sign-up-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        padding: 0rem 5rem;
+        transition: all 0.2s 0.7s;
+        overflow: hidden;
+    }
+
+    .row {
+        display: flex;
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .btn {
+        width: 150px;
+        background-color: #5995fd;
+        border: none;
+        outline: none;
+        height: 49px;
+        border-radius: 49px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .title {
+        font-size: 2.2rem;
+        color: #444;
+        margin-bottom: 10px;
+    }
+
+    .input-field {
+        width: 300px;
+        background-color: #f0f0f0;
+        margin: 10px 0;
+        height: 55px;
+        border-radius: 55px;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        padding: 0 0.4rem;
+        position: relative;
+    }
+
+    .input-field .icon {
+        text-align: center;
+        margin-top: 10px;
+        color: #acacac;
+        transition: 0.5s;
+        font-size: 2rem;
+    }
+
+    .input-field input,
+    select {
+        background: none;
+        outline: none;
+        border: none;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #333;
+
+    }
+
+
+
+    .input-field input::placeholder {
+        color: #aaa;
+        font-weight: 500;
+
+    }
+
+    select {
+
+        color: #333333dc;
+        font-weight: 1.1rem;
+
+        option {
+            font-size: 1.1rem;
+            color: #333;
+        }
+    }
+
+    .btn:hover {
+        background-color: #4d84e2;
+    }
+
+    #uploadsign {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        label {
+            font-size: 1.2rem;
+            color: #aaa;
+            font-weight: 500;
+            margin: 5px;
+        }
+    }
+
+
+    .compressed-image {
+        display: none;
+    }
+
+    #uploadsign:hover {
+        position: relative;
+
+        .compressed-image {
+            display: block;
+            position: absolute;
+            right: 1.9%;
+        }
+    }
+
+
+}

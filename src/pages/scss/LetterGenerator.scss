@@ -1,0 +1,215 @@
+.container {
+
+
+    h1 {
+        margin: 10px;
+    }
+
+
+    .LetterGenerator {
+        display: flex;
+        max-width: 70%;
+        margin: auto;
+        padding: 1rem 0;
+        border-radius: 2rem;
+        border: 1px solid var(#f1f5f9);
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+
+
+        .generate-btn {
+            max-width: 170px;
+            align-items: center;
+            appearance: none;
+            background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+            border: 0;
+            border-radius: 6px;
+            box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono", monospace;
+            height: 48px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s;
+            -webkit-user-select: none;
+            user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 18px;
+        }
+
+        .generate-btn:focus {
+            box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+        }
+
+        .generate-btn:hover {
+            box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .generate-btn:active {
+            box-shadow: #3c4fe0 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 100px;
+            width: 100%;
+            overflow: hidden;
+            margin: auto;
+            position: relative;
+
+            .select {
+
+                max-width: 200px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+
+
+                option {
+                    padding: 5px;
+                }
+            }
+
+
+            .row {
+                display: flex;
+                justify-content: start;
+            }
+
+            .column {
+                width: 100%;
+            }
+
+            span {
+                padding: 10px;
+                font-size: 1.5rem;
+                color: var(#0f172a);
+                background-color: var(#f1f5f9);
+                border-radius: 1rem;
+            }
+
+            .input__group {
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+                padding: 20px 20px;
+            }
+
+            input {
+                width: 200px;
+                padding: 10px 0;
+                font-size: 1rem;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid var(#3d5cb8);
+                color: var(#0f172a);
+                box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+                padding: 10px;
+            }
+
+            #medicalReasonFile {
+                min-width: 250px;
+                max-width: 250px;
+            }
+
+            #customReason,
+            #Events {
+                resize: none;
+                min-width: 250px;
+                max-width: 350px;
+                height: 100%;
+                font-size: 1.2rem;
+            }
+
+            .compressed-image {
+                position: absolute;
+                top: 150px;
+                right: 200px;
+            }
+        }
+    }
+}
+
+.letter-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    position: relative;
+
+    .srkrlogo {
+        text-align: center;
+    }
+
+    .subject {
+        font-size: 18px;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .greet {
+        margin: 20px 0;
+    }
+
+    .para1 {
+        margin: 20px 0;
+    }
+
+    .sender-info {
+        display: flex;
+        justify-content: flex-end;
+
+        .sender {
+            text-align: left;
+            margin-left: 10px;
+        }
+    }
+
+
+    .letter-content {
+        text-align: justify;
+    }
+
+    .signature {
+        margin-top: 20px;
+        text-align: right;
+    }
+
+    .date {
+        color: red;
+    }
+}
+
+
+
+page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+
+page[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+}
