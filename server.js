@@ -112,7 +112,7 @@ app.post('/adminregister', async (req, res) => {
     const newUser = {
       firstname,
       lastname,
-      password: hashedPassword,
+      password,
       email,
       contact,
       staffId,
@@ -240,7 +240,7 @@ app.post('/studentregister', async (req, res) => {
     const newUser = {
       firstname,
       lastname,
-      password: hashedPassword,
+      password,
       email,
       studentId,
       department,
