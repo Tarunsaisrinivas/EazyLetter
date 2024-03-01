@@ -38,7 +38,7 @@ const store = new ConnectMongoDBSession(session)(
     
 
 app.use(cors({
-  origin: ["http://localhost:5173"],
+  origin: ["http://localhost:5173","https://eazyletter.netlify.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
